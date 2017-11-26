@@ -1,0 +1,26 @@
+constraint u8 0..255
+constraint i8 -128..127
+constraint u16 0..65536
+constraint i16 -32768..32767
+
+constraint Age 0..
+constraint HeightMm 0..3000
+constraint HeightIn HeightCm/25.4
+
+type Person struct {
+	age: Age
+	height: Height
+}
+
+fn toInches(height: HeightMm) HeightIn {
+	height / 25.4
+}
+
+fn main() {
+	println("Input your height in millimeters: ")
+	height = input()
+	assert(height >= 0 && height <= 300, "Not a valid height!")
+	print("Your height in inches is: ")
+	println(toInches(height))
+	y = x + 4
+}
